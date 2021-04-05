@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.game {
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    border-bottom: 1px solid black;
+    background: url(../image/desert.jpg);
+    background-size: 1200px 300px;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    animation: bgMove 10s infinite linear;
+}
+
+.game::after {
+    content: "";
+    display: flex;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    background: url(../image/cloud.png);
+    background-size: 100px 80px;
+    z-index: 1;
+    top: 40px;
+    left: 600px;
+    animation: cloudMove 10s infinite linear;
+}
+
+.game::before {
+    content: "";
+    display: flex;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    background: url(../image/cloud.png);
+    background-size: 100px 80px;
+    z-index: 1;
+    top: 10px;
+    left: 600px;
+    animation: cloudMove 8s infinite linear;
+}
+
+.dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(../image/tricer.png);
+    background-size: 50px 50px;
+    position: relative;
+    top: 250px;
+    left: 50px;
+    
+}
+
+.cactus {
+    width: 40px;
+    height: 60px;
+    background-image: url(../image/cact.png);
+    background-size: 40px 60px;
+    position: absolute;
+    top: 240px;
+    left: 570px;
+    animation: cactusMove 2s infinite linear;
+    
+}
+
+.rules {
+    position: absolute;
+    padding: 5px 10px;
+    top: 20px;
+    left: 20px;
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    z-index: 2;
+}
+.score {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    z-index: 2;
+}
+
+.pause {
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 5px black;
+    display: inline-block;
+    padding: 30px;
+    background-color: green;
+    left: 40%;
+    top: 30%;
+    box-shadow: 0 0 5px 2px black;
+}
+
+.over {
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 5px black;
+    display: inline-block;
+    padding: 30px;
+    background-color: red;
+    left: 40%;
+    top: 30%;
+    box-shadow: 0 0 5px 2px black;
+}
+
+.jump {
+    animation: jump 0.5s;
+}
+
+@keyframes cactusMove {
+    0% {
+        left: 570px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 210px;
+    }
+
+    20% {
+        top: 200px;
+    }
+
+    40% {
+        top: 180px;
+    }
+
+    60% {
+        top: 180px; 
+    }
+
+    80% {
+        top: 200px;
+    }
+
+    100% {
+        top: 210px;
+    }
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: top;
+    } 
+}
+
+@keyframes cloudMove {
+
+    100% {
+        transform: translateX(-700px);
+    }
+}
+
